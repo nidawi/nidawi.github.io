@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="home">
+<!-- Categories -->
+<div class="blog-menu">
+dd
+</div>
+
+    <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+          <div class="blog-content-text">
+            {% if post.thumbnail != nil %}
+            <img src="{{ post.thumbnail }}">
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            {{ post.content | strip_html | truncatewords: 20 }}
+            <a href="{{ post.url | relative_url }}"> Read more... </a>
+          </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!--
+        <p class="blog-post-title">{{ post.title }}</p>
+        {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <div class="blog-content-text">
+        
+        </div>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+-->
