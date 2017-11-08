@@ -15,13 +15,21 @@
   @include relative-font-size(1.625);
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   margin-bottom: 0;
   float: left;
+  font-family: $title-font-family;
+  text-shadow: 0 0 3px $frame-colour;
 
-  &,
+  &:link {
+    color: $text-alt-colour;
+  }
   &:visited {
-    color: $grey-color-dark;
+    color: $text-alt-colour;
+    //color: $text-alt-colour;
+  }
+  &:hover {
+    text-decoration: none;
   }
 }
 
@@ -41,6 +49,9 @@
     color: $text-color;
     line-height: $base-line-height;
 
+    &:hover {
+      color: $text-alt-colour;
+    }
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
@@ -160,6 +171,22 @@
   width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
+.footer-col-3-links {
+  text-align: center;
+  color: $grey-color-light;
+
+  ul, li {
+    display: inline;
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0; 
+  }
+  li:not(:last-child):after {
+    content: " |";
+  }
+}
+
 @include media-query($on-laptop) {
   .footer-col-1,
   .footer-col-2 {
@@ -180,8 +207,6 @@
     width:         calc(100% - (#{$spacing-unit} / 2));
   }
 }
-
-
 
 /**
  * Page content
@@ -214,11 +239,17 @@
 }
 
 /**
- * Custom Blog Stuff
+ * Custom Blog Stuff  
  */
 .blog-heading {
   text-align: left;
   @include relative-font-size(2.625);
+}
+
+.blog-dummy {
+  width: auto;
+  float: left;
+  color: $background-color;
 }
 
 .blog-menu {
@@ -228,23 +259,71 @@
   float: left;
 }
 
-.blog-content-text {
-  text-align: center;
-
-  img {
-    width: 20%;
-    height: auto;
-    margin: auto;
-    border-radius: 100px;
+.blog-content-container {
+  border: 1px solid red;
+  
+  ul,li { 
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0; 
   }
-  a {
-    text-align: right;
-    @include relative-font-size(0.5);
+}
+
+.blog-content {
+  width: $blogitem-width;
+  height: $blogitem-width / 2;
+  border: 1px solid red;
+  background-color: $blog-colour;
+  //margin: $spacing-unit;
+  margin-bottom: $spacing-unit / 2;
+
+  &:hover {
+    //transform: scale(1.1, 1.1);
+    transform: translate(0, -10px);
+    box-shadow: 0px 4px 8px 0 $background-color;
+  }
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.blog-content-text {
+  width: 100%;
+  height: 30%;
+  position: relative;
+  top: -30%;
+  background-color: $black-colour-transparent-darker;
+
+  category {
+    color: $special-colour;
+    margin-left: $spacing-unit;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    display: inline;
   }
   h1 {
-    color: red;
-    display: block;
+    color: $text-alt-colour;
+    margin-left: $spacing-unit;
+    font-family: $blog-title-font-family;
     @include relative-font-size(1.5);
+  }
+  p {
+    margin-top: -$spacing-unit * 0.6;
+    margin-left: $spacing-unit * 2;
+    color: $text-alt-colour;
+  }
+  a {
+    color: $link-colour;
   }
 }
 

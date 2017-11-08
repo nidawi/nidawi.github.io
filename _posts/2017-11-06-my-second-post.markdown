@@ -3,9 +3,10 @@ layout: post
 title:  "My Second Post"
 date:   2017-11-06 15:44:00 +0100
 thumbnail: https://jcscans.files.wordpress.com/2009/08/clever-cat-using-pc.jpg
+poster: nidawi
 categories: personal
 ---
-In this, my second-ever post, I am going to focus on practising the liquid theme "language", or whatever you want to call it. To do this, I found the [shopify help center](https://help.shopify.com/themes/liquid) very useful.
+In this, my second-ever post, I am going to focus on practising the liquid theme "language", or whatever you want to call it. To do this, I found the [shopify help center](https://help.shopify.com/themes/liquid) very useful. The blog is being designed similarly to [this site](https://www.webdesignerdepot.com/).
 {% assign testArray1 = "horse,cow,cat,elephant,dog" | split: "," %}
 
 #### Personal exercise 1
@@ -21,6 +22,10 @@ Here, we will make a few if () checks to see what they return, if anything.
 {% assign thisURL = page.url | split: "/" %}
 * The file name of this page is "{{ thisURL | last }}".
 * Due to being a post, page.permalink should be empty: {% if page.permalink == null %}  {% endif %}
+* 5 / 2 = {{ 5 | divided_by: 2 }}
+* 10 % 2 = {{ 10 | modulo: 2 }}
+* 11 % 2 = {{ 11 | modulo: 2 }}
+* "Title Test": {{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}
 * Raw: 
 {% raw %}{{ 6 | times: 2 }}{% endraw %} equals {{ 6 | times: 2 }}.
 
@@ -31,18 +36,24 @@ Print array [horse,cow,cat,elephant,dog]:
 {% for s in testArray1 %}
   * {{ s }}
 {% endfor %}
+* Using tablerow to create a separated one-liner:
+<table> 
+{% tablerow row in testArray1 %} 
+{{ row }} 
+{% endtablerow %} 
+</table>
 
-
-
-
-<!--
-{% assign imgArray = "hej1,hej2,hej3,hej4,hej5,hej6,hej6,hej8,hej9,hej10" | split: "," %}
-{% assign rowCount = imgArray.size | divided_by: 5 %}
-{% for row in (0..rowCount) %}
-    {% assign startIndex = 5 | times: row %}
-    {% for img in imgArray limit:5 offset:startIndex  %}
-        {{ img }}
-    {% endfor %}
+#### Testing how to print a specific amount of items per line
+{% assign myArray = site.posts %}
+{% assign arrayTest = myArray.size | modulo: 2 %}
+{% if arrayTest == 0 %}
+{% assign iterCount = myArray.size | divided_by:2 | minus:1 %}
+{% else %}
+{% assign iterCount = myArray.size | divided_by:2 %}
+{% endif%}
+{% for i in (0..iterCount) %}
+{% assign index1 = i %}
+{% assign index2 = myArray.size | minus: i | minus: 1 %}
+{{ myArray[index1].title }}
+{{ myArray[index2].title }}
 {% endfor %}
--->
-

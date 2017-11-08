@@ -2,19 +2,46 @@
 layout: default
 ---
 
-<div class="home">
-<!-- Categories -->
-<div class="blog-menu">
-dd
+
+<!-- Dummy Container 
+<div id="tester" class="blog-dummy">
+{% for post in site.posts %}
+{{ post.url | relative_url }}
+{% endfor %}
+</div>
+<script defer type="text/javascript" src='/assets/blog.js'></script>-->
+
+<div class="blog-content-container">
+  <ul>
+      {% for post in site.posts %}
+        <li>
+            <div class="blog-content"> 
+              {% if post.thumbnail %}
+              <a href="{{ post.url | relative_url }}"><img src="{{post.thumbnail}}"></a>
+              {% else %}
+              <a href="{{ post.url | relative_url }}"><img src="/assets/img/image-missing.png"></a>
+              {% endif %}
+
+              <div class="blog-content-text">
+              <category title="The categories of this post.">{{ post.categories }}</category>
+              <a href="{{ post.url | relative_url }}"><h1>{{ post.title }}</h1></a>
+              <p>By: <a href="">{{ post.poster }}</a> -
+              {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
+              {{ post.date | date: date_format }}
+              - share</p>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+  </ul>
 </div>
 
-    <ul class="post-list">
+<!--
+  <ul class="post-list">
     {% for post in site.posts %}
       <li>
           <div class="blog-content-text">
-            {% if post.thumbnail != nil %}
-            <img src="{{ post.thumbnail }}">
-            {% endif %}
+
             <h1>{{ post.title }}</h1>
             {{ post.content | strip_html | truncatewords: 20 }}
             <a href="{{ post.url | relative_url }}"> Read more... </a>
@@ -22,9 +49,16 @@ dd
       </li>
     {% endfor %}
   </ul>
-</div>
 
-<!--
+
+
+            {% if post.thumbnail != nil %}
+            <img src="{{ post.thumbnail }}">
+            {% endif %}
+
+
+
+
         <p class="blog-post-title">{{ post.title }}</p>
         {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>

@@ -3,6 +3,8 @@
 // Define defaults for each variable.
 
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$title-font-family: "Impact" !default;
+$blog-title-font-family: "Courier" !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -15,19 +17,22 @@ $text-alt-colour:  #fdfdfd !default;
 $background-color: #070016 !default;
 $brand-color:      #2a7ae2 !default;
 $frame-colour:     #15073d !default;
+$blog-colour:      #030007 !default;
+$special-colour:   orange !default;
+$link-colour:      #4f82d6 !default;
+$black-colour:     #000000 !default;
+$black-colour-transparent: transparentize($black-colour, 0.5) !default;
+$black-colour-transparent-darker: transparentize($black-colour, 0.15) !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
 
-// Custom Variables
 // Note: http://sass-lang.com/documentation/Sass/Script/Functions.html
-$black-colour: #0f0f0f;
-$black-colour-transparent: transparentize($black-colour, 0.5);
-$header-text-colour: #fdfdfd;
 
 // Width of the content area
 $content-width:    1200px !default;
+$blogitem-width:   $content-width / 2 !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
