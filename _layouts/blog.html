@@ -2,14 +2,64 @@
 layout: default
 ---
 
+<div class="blog-content-container">
+  <ul>
+      {% for post in site.posts %}
+        <li>
+          <div class="blog-content"> 
+            {% if post.thumbnail %}
+              <a href="{{ post.url | relative_url }}"><img src="{{post.thumbnail}}"></a>
+              {% else %}
+              <a href="{{ post.url | relative_url }}"><img src="/assets/img/image-missing.png"></a>
+              {% endif %}
 
-<!-- Dummy Container 
+              <div class="blog-content-text">
+              <category title="The categories of this post.">{{ post.categories }}</category>
+              <a href="{{ post.url | relative_url }}"><h1>{{ post.title }}</h1></a>
+              <p>By: <a href="">{{ post.poster }}</a> -
+              {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
+              {{ post.date | date: date_format }}
+              - share</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+</div>
+
+
+
+<!--
+  
+  
+  
+  
+
+  
+  
+  
+            {% assign currentIndex = forloop.index | modulo:2 %}
+          {% if currentIndex == 0 %}
+          <br/><br/>
+          {% endif %}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Dummy Container 
 <div id="tester" class="blog-dummy">
 {% for post in site.posts %}
 {{ post.url | relative_url }}
 {% endfor %}
 </div>
-<script defer type="text/javascript" src='/assets/blog.js'></script>-->
+<script defer type="text/javascript" src='/assets/blog.js'></script>
 
 <div class="blog-content-container">
   <ul>
@@ -25,7 +75,7 @@ layout: default
               <div class="blog-content-text">
               <category title="The categories of this post.">{{ post.categories }}</category>
               <a href="{{ post.url | relative_url }}"><h1>{{ post.title }}</h1></a>
-              <p>By: <a href="">{{ post.poster }}</a> -
+              <p>By: <a href="" class="blog-link-override">{{ post.poster }}</a> -
               {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
               {{ post.date | date: date_format }}
               - share</p>
@@ -36,7 +86,7 @@ layout: default
   </ul>
 </div>
 
-<!--
+
   <ul class="post-list">
     {% for post in site.posts %}
       <li>

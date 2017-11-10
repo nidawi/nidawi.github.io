@@ -44,16 +44,21 @@ Print array [horse,cow,cat,elephant,dog]:
 </table>
 
 #### Testing how to print a specific amount of items per line
-{% assign myArray = site.posts %}
-{% assign arrayTest = myArray.size | modulo: 2 %}
-{% if arrayTest == 0 %}
-{% assign iterCount = myArray.size | divided_by:2 | minus:1 %}
-{% else %}
-{% assign iterCount = myArray.size | divided_by:2 %}
-{% endif%}
-{% for i in (0..iterCount) %}
-{% assign index1 = i %}
-{% assign index2 = myArray.size | minus: i | minus: 1 %}
-{{ myArray[index1].title }}
-{{ myArray[index2].title }}
+<style>
+ul#menu li {
+    display:inline;
+    border: 1px solid red;
+    margin: 5px;
+}
+</style>
+<ul id="menu">
+{% for post in site.posts %}
+<li>
+{{ post.title }}
+</li>
+{% assign currentIndex = forloop.index | modulo:2 %}
+{% if currentIndex == 0 %}
+<br>
+{% endif %}
 {% endfor %}
+</ul>

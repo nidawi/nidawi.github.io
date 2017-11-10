@@ -18,6 +18,10 @@ $background-color: #070016 !default;
 $brand-color:      #2a7ae2 !default;
 $frame-colour:     #15073d !default;
 $blog-colour:      #030007 !default;
+
+$wrapper-base:   #030007 !default;
+$wrapper-colour:   transparentize($wrapper-base, 0.5) !default;
+
 $special-colour:   orange !default;
 $link-colour:      #4f82d6 !default;
 $black-colour:     #000000 !default;
@@ -32,7 +36,7 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 
 // Width of the content area
 $content-width:    1200px !default;
-$blogitem-width:   $content-width / 2 !default;
+$blogitem-width:   $content-width / 2 - $spacing-unit !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
