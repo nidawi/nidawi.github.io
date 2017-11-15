@@ -3,6 +3,7 @@ layout: post
 title:  "My First Post!"
 date:   2017-11-06 12:33:00 +0100
 poster: nidawi
+thumbnail: https://www.rd.com/wp-content/uploads/sites/2/2016/02/06-train-cat-shake-hands.jpg
 categories: personal
 ---
 ### This is a **header**.

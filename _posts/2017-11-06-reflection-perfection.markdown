@@ -15,10 +15,7 @@ let total = myArray.reduce(function(a, b) { return a + b; });
 {% endhighlight %}
 
 
-### What do you think of pre-compiling your CSS?
-Compare to regular CSS
-Which techniques did you use?
-Pros and cons?
+
 
 ### What do you think of static site generators?
 I feel that they could be useful for smaller scale sites that don't rely on complex design routines or advanced features. For those who prioritize their sites being quick and relatively easy to set up and maintain.  

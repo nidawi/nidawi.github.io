@@ -4,20 +4,33 @@ comments: true
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header>
-
   <div class="post-content" itemprop="articleBody">
-    {{ content }}
+    <div class="post-header">
+        {% if page.thumbnail != nil %}
+        <img src="{{ page.thumbnail }}" alt="Post thumbnail." title="Image Source: {{page.thumbnail}}">
+        {% else %}
+        <img src="/assets/img/noimg.png" alt="Post thumbnail." title="This post had no thumbnail.">
+        {% endif %}
+        <div class="post-meta">
+            <cat title="The categories of this post.">
+                <ul class="list-format">
+                  {% for c in page.categories %}
+                    <li>
+                        {{ c | upcase }}
+                    </li>
+                  {% endfor %}
+                </ul> 
+              </cat>
+          <h1>{{ page.title | escape }}</h1>
+          <p>By <a href="">{{ page.poster }}</a> •
+            {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
+            {{ page.date | date: date_format }}
+            • share</p>
+        </div>
+    </div>
+    <div class="post-text-box">
+      {{ content }}
+    </div>
   </div>
 
   <!-- Disqus comments are already included? -->
@@ -25,3 +38,22 @@ comments: true
     {% include disqus_comments.html %}
   {% endif %}
 </article>
+
+
+
+
+<!--
+
+    <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+      </time>
+      {% if page.poster %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.poster }}</span></span>
+      {% endif %}</p>
+  </header>
+
+-->

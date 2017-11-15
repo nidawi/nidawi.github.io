@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "How Sassy!"
+date:   2017-11-12 19:52:00 +0100
+poster: nidawi
+thumbnail: http://www.webinsation.com/wp-content/uploads/2012/06/sass-vs-css.jpg
+categories: 1dv022
+---
+In this post I will try to, with my extremely limited knowledge on the subject, discuss some my opinion of-, and a few differences between SASS and CSS as well as how I employed it, if at all.
+
+### What do you think of pre-compiling your CSS?
+### Pre-compiled CSS, CSS, and their pros and cons
+Honestly? I still don't really have an opinion. Or, I cannot really say that as that would be the same as saying "I don't have an opinion whether I'd like the fancy car for the same price as the scrap pile." Obviously you want the fancy car, and by the same logic you could argue that the response to this question would be: "I think it's a good thing."  
+Pre-compilation adds some much-needed features such as:
+* Variables
+* Nesting
+* Mixins
+* Colour extensions
+* Control statements and loops
+* Math
+  
+As well as some other quite useful features. I sadly didn't have enough time to make use of all those, and even less extensive use. I feel the base site that we receive from Jekyll is a bit too extensive for us to completely rebuild it in a week or two (especially considering how long it took to get Jekyll working in the first place).
+
+
+
+  
+This may sound stupid, but a clear disadvantage of pre-compiled CSS is the fact that it needs to be compiled and cannot just be haphazardly tossed into a .css file and you're good to go. However, if this is an actual downside or not is obviously rather subjective. I personally believe it to be worth it in the end - even though I would *not* want to go through the whole Docker-Jekyll installation ordeal again, which might mean that I don't find it worth it? I guess we will never know what exactly I think.
+### The use of pre-compiled CSS on this site
+
+#### Compare to regular CSS
+#### Which techniques did you use?
+I didn't use that many different techniques, to be honest. There was already quite a few features lying around when you delved into the minima theme files. I can however say that I made somewhat extensive use of variables such as $variablename = reusable_color; I found those quite useful. Now, could I have made even further use of them? Of course I could have. Sadly I am pretty garbage when it comes to web design so I spent most of the time on this assignment to get things at all functional.  
+I made use of Nesting. It's a given, really. Makes far more sense judging by every other type of coding that we have thus far done, both here and at home. I found the result was a bit unpredictable at times but I assume that is due to my negligence rather than flaws in SASS.
+#### Pros and cons?

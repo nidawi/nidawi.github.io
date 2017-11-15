@@ -17,7 +17,7 @@ title: A Cat's Handbook to Coding
 author: nidawi
 email: ja222ts@student.lnu.se
 description: >- # this means to ignore newlines until "baseurl:"
-  This is a webpage dedicated to all things cat, coding, or both. Preferrably both. Expect plenty of cat pictures.
+  This is a webpage dedicated to all things cat, coding, or both. Preferably both. Expect plenty of cat pictures.
   This is random filler content just to make this paragraph look a bit more appealing. Problem?
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com

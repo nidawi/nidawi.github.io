@@ -3,8 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-![Cat me](https://jcscans.files.wordpress.com/2009/08/clever-cat-using-pc.jpg)
 ## Me, myself, and I
 
 ### My interests

@@ -10,16 +10,24 @@ layout: default
             {% if post.thumbnail %}
               <a href="{{ post.url | relative_url }}"><img src="{{post.thumbnail}}"></a>
               {% else %}
-              <a href="{{ post.url | relative_url }}"><img src="/assets/img/image-missing.png"></a>
+              <a href="{{ post.url | relative_url }}"><img src="/assets/img/noimg.png"></a>
               {% endif %}
 
               <div class="blog-content-text">
-              <category title="The categories of this post.">{{ post.categories }}</category>
+              <category title="The categories of this post.">
+                <ul class="list-format">
+                  {% for c in post.categories %}
+                    <li>
+                        {{ c | upcase }}
+                    </li>
+                  {% endfor %}
+                </ul> 
+              </category>
               <a href="{{ post.url | relative_url }}"><h1>{{ post.title }}</h1></a>
-              <p>By: <a href="">{{ post.poster }}</a> -
+              <p>By <a href="" title="All posts by {{ post.poster }}.">{{ post.poster }}</a> •
               {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
               {{ post.date | date: date_format }}
-              - share</p>
+              • share</p>
           </div>
         </li>
       {% endfor %}
