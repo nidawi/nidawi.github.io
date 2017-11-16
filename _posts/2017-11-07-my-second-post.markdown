@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My Second Post"
-date:   2017-11-06 15:44:00 +0100
+date:   2017-11-07 15:44:00 +0100
 thumbnail: https://jcscans.files.wordpress.com/2009/08/clever-cat-using-pc.jpg
 poster: nidawi
 categories: personal
@@ -42,23 +42,3 @@ Print array [horse,cow,cat,elephant,dog]:
 {{ row }} 
 {% endtablerow %} 
 </table>
-
-#### Testing how to print a specific amount of items per line
-<style>
-ul#menu li {
-    display:inline;
-    border: 1px solid red;
-    margin: 5px;
-}
-</style>
-<ul id="menu">
-{% for post in site.posts %}
-<li>
-{{ post.title }}
-</li>
-{% assign currentIndex = forloop.index | modulo:2 %}
-{% if currentIndex == 0 %}
-<br>
-{% endif %}
-{% endfor %}
-</ul>

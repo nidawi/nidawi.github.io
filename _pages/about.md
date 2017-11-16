@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-## Me, myself, and I
+# About me
 
 ### My interests
 

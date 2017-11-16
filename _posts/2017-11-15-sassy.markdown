@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "How Sassy!"
+date:   2017-11-15 13:00:00 +0100
+poster: nidawi
+thumbnail: http://www.webinsation.com/wp-content/uploads/2012/06/sass-vs-css.jpg
+categories: 1dv022
+---
+In this post I will try to, with my extremely limited knowledge on the subject, discuss some my opinion of-, and a few differences between SASS and CSS as well as how I employed it, if at all.
+### Pre-compiled CSS, CSS, and their pros and cons
+CSS is, in itself, rather static and feels somewhat dated. It does not allow you to do a lot of the things that any developer kind of takes for granted coming from essentially any other language. Sure, classes allow you to re-use sets to some extent and you could with a lot of hassle create some form of decent structure with a function or two, but it always felt a bit like traversing a swamp. The lack of variables, for instance, made maintenance or updating an absolute chore tracking down 300 color: values and manually updating them (sure, search-and-replace could probably fix it, but still). The lack of a hierarchy complicated plenty of "everyday" operations and the lack of easy-to-use math operators and dynamic... I guess you could call them dynamic values(?) certainly don't aid the developer in making managable CSS.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alright then, does this mean that CSS is the devil's creation and pro-processors with their fancy hierarchry imports and nestings are here to save us all? Not exactly, or well, somewhat, yes. While the list of issues and limitations in CSS is long and filled with plenty of curses, there are benefits - albeit not a whole lot of them. It is likely that CSS will look simpler and more approachable to a rookie or someone who is not in need to extensive features and just wants to get a "good enough" website up, preferably the day before. It may sound almost stupid to say it, but this ties in with a clear disadvantage of pre-compiled CSS which is the fact that it *needs* to be compiled and cannot just be haphazardly tossed into a .css file and you're good to go. However, if this is an actual downside or not is obviously rather subjective. I personally believe it to be worth it in the end - even though I would *not* want to go through the whole Docker-Jekyll installation ordeal again, which might mean that I don't find it worth it? I guess we will never know what exactly I think.
+#### The features of CSS pre-compilation
+The list of features that CSS pre-processors provide is quite long and I did sadly not have enough time to try them all (even less using any of them particularly extensively). To be fair, I feel the base site that we receive from Jekyll is a bit too extensive for us to completely rebuild it in a week or two (especially considering how long it took to get Jekyll working in the first place) and it is indeed quite likely that a few remnants of the base site is still lying around in an .scss file somewhere. Anyway, I have no intention to list them all, but here I will list and briefly discuss a few of the very useful features offered:
+
+* Variables
+  * *Allows you to store a value, such as a colour, a mathemathical value, etc. in a global variable accessible to all imported .scss files in the hierarchy. This allows you to quite easily define a default text colour, for instance, so if you decide to change that colour you change one value and it's changed everywhere. Neat! I used variables quite extensively.*
+* Nesting
+  * *A rather large issue with CSS is its rather lacking structure. You never really knew what belonged where and it quickly got messy. Pre-processors compensate for this by adding the nesting feature, which essentially allows you to "embed", in a way, sub-declarations to children within the main-declaration. I used this quite extensively as well. See below for a comparative example:*
+  {% highlight scss %}
+  // SCSS
+  .myWrapper {
+      border: 1px solid green;
+      p {
+          // This nested p applies to all p-tags within the main class myWrapper.
+          color: red;
+      }
+  }
+  {% endhighlight %}
+  {% highlight css %}
+  // CSS
+  .myWrapper {
+      border: 1px solid green;
+  }
+  .myWrapper p {
+      color: red;
+  }
+  {% endhighlight %}
+* Mixins
+  * *A mixin is essentially a set of reuse-friendly CSS declarations that allow you to pass parameters modifying the declarations that it carries. Can be very convenient if you need a dynamic design. I did not get to use this one. Maybe next time.*
+* Inheritance
+  * *Inheritance is exactly what it sounds like. This feature allows CSS declarations to "inherit" another CSS declaration as to allow reusability. Modifications to the inherited values can then be made in the new declaration as well as any new values the user sees fit. I used this some and I am aware of that I could have used it way more.*
+* Colour extensions
+  * *Once more, pre-processors make our life easier by providing us with some really quite simple functions to perform certain operations on colours, such as lighten or darken a colour, add opacity to a colour, or even mix colours. I used this to create the transparent frames and the colour-changing links.*
+* Math
+  * *Pre-processors also add more extensive math support, such as performing math operations that we are used to fetching from a Math class, such as rounding, max, min, round, and ceil, etc. I used quite a bit of math, even though I did not need those particular features this time.*
+
+### The use of pre-compiled CSS on this site
+#### Which techniques did you use?
+I didn't use that many different techniques, to be honest. There was already quite a few features lying around when you delved into the minima theme files that you could either just keep using or make changes to in order to make them fit your needs. Some other features were omitted due to a lack of time, such as mixin which is actually a really useful feature that I wish I would have used a bit more.
+{% highlight scss %}
+.list-format {
+  display: inline;
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+}
+{% endhighlight %}
+The above example is an (s)css class that I made in order to create good-looking in-line lists without any annoying dots or creepy margins.
+
+I can however say that I made somewhat extensive use of variables such as $variablename = reusable_color; I found those quite useful. Now, could I have made even further use of them? Of course I could have. Sadly I am pretty garbage when it comes to web design so I spent most of the time on this assignment to get things at all functional.  
+I made use of Nesting. It's a given, really. Makes far more sense judging by every other type of coding that we have thus far done, both here and at home. I found the result was a bit unpredictable at times but I assume that is due to my negligence rather than flaws in SASS.

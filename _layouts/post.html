@@ -13,7 +13,7 @@ comments: true
         {% endif %}
         <div class="post-meta">
             <cat title="The categories of this post.">
-                <ul class="list-format">
+                <ul>
                   {% for c in page.categories %}
                     <li>
                         {{ c | upcase }}
@@ -24,8 +24,7 @@ comments: true
           <h1>{{ page.title | escape }}</h1>
           <p>By <a href="">{{ page.poster }}</a> •
             {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
-            {{ page.date | date: date_format }}
-            • share</p>
+            {{ page.date | date: date_format }}</p>
         </div>
     </div>
     <div class="post-text-box">

@@ -16,6 +16,7 @@ $slim-line-height: 1 !default;
 $spacing-unit:     30px !default;
 
 $text-color:       #fdfdfd  !default; //#8560d1
+$text-color-darker: darken($text-color, 20%) !default;
 $text-alt-colour:  #828282 !default;
 $background-color: #070016 !default;
 $brand-color:      #2a7ae2 !default; // This is for default links.

@@ -27,7 +27,6 @@ layout: default
               <p>By <a href="" title="All posts by {{ post.poster }}.">{{ post.poster }}</a> •
               {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
               {{ post.date | date: date_format }}
-              • share</p>
           </div>
         </li>
       {% endfor %}
