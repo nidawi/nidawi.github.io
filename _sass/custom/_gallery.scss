@@ -1,0 +1,40 @@
+.gallery-wrapper {
+    margin: $spacing-unit;
+    overflow: visible;
+    height: 20%;
+
+    img {
+        float: left;
+        position: relative;
+        width: calc(25% - 7px);
+        height: calc(100% - 10px);
+        margin: 0;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        transform: translateY(0);
+    }
+    img:first-child {
+        margin-left: 5px;
+    }
+    img:hover {
+        top: -10px;
+    }
+}
+.focusImg {
+    overflow: auto;
+    background-color: $wrapper-base;
+    margin: $spacing-unit;
+    z-index: 1;
+    display: none;
+    position: fixed;
+    height: auto;
+
+    img {
+        width: 100%;
+    }
+    h1 {
+        text-align: center;
+        margin: $spacing-unit / 2;
+    }
+}

@@ -3,6 +3,7 @@ layout: post
 title:  "Robots vs. Humans"
 date:   2017-11-10 13:00:00 +0100
 poster: nidawi
+comments: true
 thumbnail: https://www.orbitmedia.com/wp-content/uploads/2013/02/humansvsrobots-large.jpg
 categories: 1dv022
 ---

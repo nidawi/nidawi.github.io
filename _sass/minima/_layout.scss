@@ -480,6 +480,7 @@
   cat {
     position: absolute;
     width: auto;
+    margin-left: 0;
     background-color: $special-colour;
     color: $black-colour;
     font-family: $blog-title-font-family;
@@ -500,12 +501,16 @@
     font-family: $blog-title-font-family;
     font-weight: $base-font-weight * 2;
     line-height: $slim-line-height;
+    margin-left: $spacing-unit;
+    margin-right: $spacing-unit;
     margin-bottom: 2%;
     margin-top: 4%;
   }
   p {
     font-size: $base-font-size;
     color: $text-alt-colour;
+    margin-left: $spacing-unit;
+    margin-right: $spacing-unit;
     margin-bottom: 4%;
   }
   a {

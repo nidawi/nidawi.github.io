@@ -3,6 +3,7 @@ layout: post
 title:  "How Sassy!"
 date:   2017-11-15 13:00:00 +0100
 poster: nidawi
+comments: true
 thumbnail: http://www.webinsation.com/wp-content/uploads/2012/06/sass-vs-css.jpg
 categories: 1dv022
 ---
@@ -16,7 +17,7 @@ The list of features that CSS pre-processors provide is quite long and I did sad
 * Variables
   * *Allows you to store a value, such as a colour, a mathemathical value, etc. in a global variable accessible to all imported .scss files in the hierarchy. This allows you to quite easily define a default text colour, for instance, so if you decide to change that colour you change one value and it's changed everywhere. Neat! I used variables quite extensively.*
 * Nesting
-  * *A rather large issue with CSS is its rather lacking structure. You never really knew what belonged where and it quickly got messy. Pre-processors compensate for this by adding the nesting feature, which essentially allows you to "embed", in a way, sub-declarations to children within the main-declaration. I used this quite extensively as well. See below for a comparative example:*
+  * *A rather large issue with CSS is its rather lacking structure. You never really knew what belonged where and it quickly got messy. Pre-processors compensate for this by adding the nesting feature, which essentially allows you to "embed", in a way, sub-declarations to children within the main-declaration (the same hierarchy that we're used to from HTML or essentially any other programming language). I used this quite extensively as well. See below for a comparative example:*
   {% highlight scss %}
   // SCSS
   .myWrapper {
@@ -46,8 +47,11 @@ The list of features that CSS pre-processors provide is quite long and I did sad
   * *Pre-processors also add more extensive math support, such as performing math operations that we are used to fetching from a Math class, such as rounding, max, min, round, and ceil, etc. I used quite a bit of math, even though I did not need those particular features this time.*
 
 ### The use of pre-compiled CSS on this site
-#### Which techniques did you use?
-I didn't use that many different techniques, to be honest. There was already quite a few features lying around when you delved into the minima theme files that you could either just keep using or make changes to in order to make them fit your needs. Some other features were omitted due to a lack of time, such as mixin which is actually a really useful feature that I wish I would have used a bit more.
+I have already mentioned a few techniques that were used for this site, but I suppose that I should give a few more concrete examples. After all, there were already quite a few features lying around when we delved into the minima theme files that we could either just keep using or make slight changes to in order to make them fit our needs. It's a bit of a shame that we, or at least I, didn't have time to delve deeper into this as I would have loved to make use of mixins and what not. Maybe some later project will allow a more intricate scrutiny of those features.
+#### Now for a few examples
+As briefly mentioned in the previous section, I made somewhat extensive use of variables such as $variablename = reusable_color as well as the included $spacing-unit and various variations of those. Now, could I have made even further use of them? Of course I could have. Sadly I am pretty garbage when it comes to web design so I spent most of the time on this assignment to get things at all functional.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I made use of Nesting. It's a given, really. Makes far more sense judging by every other type of coding that we have thus far done, both here and at home. I found the result was a bit unpredictable at times but I assume that is due to my negligence rather than flaws in SASS. It does feel a lot better to write CSS using nesting though, I must emphasize.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I used *some* inheritance as well, although not a whole lot. The example below is an (s)css class that I made in order to create good-looking in-line lists without any annoying dots or creepy margins (Google had to help me for this one, by the way). It was a pretty convenient way to re-use code that also allowed me to make adjustments on a case-by-case basis.
 {% highlight scss %}
 .list-format {
   display: inline;
@@ -55,8 +59,15 @@ I didn't use that many different techniques, to be honest. There was already qui
   list-style-position: inside;
   margin: 0;
 }
+.generic-example {
+  ul, li {
+    @extend .list-format;
+    margin: 5; // I want some margin here - overwrites the inherited margin.
+  }
+}
 {% endhighlight %}
-The above example is an (s)css class that I made in order to create good-looking in-line lists without any annoying dots or creepy margins.
-
-I can however say that I made somewhat extensive use of variables such as $variablename = reusable_color; I found those quite useful. Now, could I have made even further use of them? Of course I could have. Sadly I am pretty garbage when it comes to web design so I spent most of the time on this assignment to get things at all functional.  
-I made use of Nesting. It's a given, really. Makes far more sense judging by every other type of coding that we have thus far done, both here and at home. I found the result was a bit unpredictable at times but I assume that is due to my negligence rather than flaws in SASS.
+Not a whole lot more to say, really. I used some math but nothing interesting enough to point out. I also used some colour expressions such as the final example here below. I probably did some other things as well that I forgot to mention.
+{% highlight scss %}
+$text-color:        #fdfdfd  !default;
+$text-color-darker: darken($text-color, 20%) !default;
+{% endhighlight %}

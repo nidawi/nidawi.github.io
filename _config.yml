@@ -25,7 +25,7 @@ url: "www.cats.com" # the base hostname & protocol for your site, e.g. http://ex
 twitter_username: ---
 github_username:  nidawi
 disqus:
-  shortname: examination1
+  shortname: catspeak
 
 # Build settings
 markdown: kramdown

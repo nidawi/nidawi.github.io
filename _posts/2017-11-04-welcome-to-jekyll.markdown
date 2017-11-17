@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2017-11-04 18:22:03 -0500
 poster: jekyll
+comments: true
 thumbnail: https://cdn.dribbble.com/users/962611/screenshots/3639436/dribble-icon-sml-48_1x.jpg
 categories: jekyll update
 ---

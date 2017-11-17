@@ -4,6 +4,7 @@ title:  "My Second Post"
 date:   2017-11-07 15:44:00 +0100
 thumbnail: https://jcscans.files.wordpress.com/2009/08/clever-cat-using-pc.jpg
 poster: nidawi
+comments: true
 categories: personal
 ---
 In this, my second-ever post, I am going to focus on practising the liquid theme "language", or whatever you want to call it. To do this, I found the [shopify help center](https://help.shopify.com/themes/liquid) very useful. The blog is being designed similarly to [this site](https://www.webdesignerdepot.com/).
@@ -41,4 +42,12 @@ Print array [horse,cow,cat,elephant,dog]:
 {% tablerow row in testArray1 %} 
 {{ row }} 
 {% endtablerow %} 
-</table>
+</table>  
+* Using the .list-format CSS class: 
+<ul>
+{% for s in testArray1 %}
+<li class="list-format">
+{{s}}
+</li>
+{% endfor %}
+</ul>
