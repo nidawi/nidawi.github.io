@@ -2,7 +2,7 @@
 layout: post
 title:  "Look at how Socially Acceptable I am!"
 date:   2017-11-12 13:00:00 +0100
-thumbnail: http://blog.silentsorority.com/wp-content/uploads/2014/08/Socially-acceptable-300x168.jpg
+thumbnail: /assets/img/posts/social.jpg
 poster: nidawi
 comments: true
 categories: 1dv022
@@ -40,12 +40,7 @@ And that's it! Supposedly, anyway. Disqus does require a proper domain which we 
 ### Open Graph: what is it?
 Alright then, onwards to Open Graph. Now, what is it? Simply put: it offers a set of (meta) data, or information, about an item on the web - in this case a website or a page on a website - which can then be used to identify that specific item on social media websites, such as Facebook or Twitter, and potentially other websites as well. In effect, should a link to that *item*, or in our case, website or page, be posted the Open Graph Protocol would supply other users who come across the link with a hint of what the website or page being linked to is about, such as its address and/or name, the title of the specific page, a short description, and a hopefully relevant image (supposedly, the info provided can vary). To the right is an image of how a link to this blog post would be displayed on Facebook:
 
-
 ![Image of how this page would be displayed on Facebook]({{ "/assets/img/posts/ogpexample.png" | relative_url }})
-
-
-
-
 #### Open Graph on this website
 This site employs a, in my honest and very fair opinion, a rather dynamic use of Open Graph - similarly to how [IMDb](http://www.imdb.com) uses it. By that I mean that I put the properties specified on [the official Open Graph site](http://ogp.me/) in the `head.html` file, thus incorporating the Open Graph protocol on every single page on the site. Perhaps this was how we were supposed to do and in that case I look like an absolute idiot right now. Moving on.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In mimicking IMDb, I decided to use Liquid to dynamically generate appropriate information for each page, so that the Contact-page would correctly show "Contact" and that each blog post would correctly show the title of that specific post. Below is an example of how Open Graph is set up on this site:
@@ -57,6 +52,6 @@ This site employs a, in my honest and very fair opinion, a rather dynamic use of
 {% endraw %}
 {% endhighlight %}
 As can be seen above, the title attempts to fetch the title of the post but in the case of the current page not having a title then the site's title will be used instead. Then the item's type is defined as being a website as this is indeed a website, and lastly the site name is assigned to the title of the site. This is just a short example featuring only three out of six nodes.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furthermore, I also made sure that each blog post would display its thumbnail instead of the site-specific grinning cat that each other page would display. Working with the url attribute proved to be a bit of a hassle because, as was also expected, Liquid does not provide access to the domain that the site is on and Javascript seemed unable to edit meta tags due to executing *after* the page had already loaded its meta tags (I am convinced there would be some way to accomplish this through javascript but unfortunately there wasn't enough time for me to investigate this further). I ended up working around this issue by using the Liquid `site.url` tag that I will simply have to update once the site has been published on Github pages.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furthermore, I also made sure that each blog post would display its thumbnail instead of the site-specific cat paw that each other page would display. Working with the url attribute proved to be a bit of a hassle because, as was also expected, Liquid does not provide access to the domain that the site is on and Javascript seemed unable to edit meta tags due to executing *after* the page had already loaded its meta tags (I am convinced there would be some way to accomplish this through javascript but unfortunately there wasn't enough time for me to investigate this further). I ended up working around this issue by using the Liquid `site.url` tag that I will simply have to update once the site has been published on Github pages.
 
 

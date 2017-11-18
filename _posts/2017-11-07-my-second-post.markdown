@@ -2,7 +2,7 @@
 layout: post
 title:  "My Second Post"
 date:   2017-11-07 15:44:00 +0100
-thumbnail: https://jcscans.files.wordpress.com/2009/08/clever-cat-using-pc.jpg
+thumbnail: /assets/img/posts/cat3.jpg
 poster: nidawi
 comments: true
 categories: personal

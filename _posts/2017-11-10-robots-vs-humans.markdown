@@ -4,7 +4,7 @@ title:  "Robots vs. Humans"
 date:   2017-11-10 13:00:00 +0100
 poster: nidawi
 comments: true
-thumbnail: https://www.orbitmedia.com/wp-content/uploads/2013/02/humansvsrobots-large.jpg
+thumbnail: /assets/img/posts/robots.jpg
 categories: 1dv022
 ---
 In this post, we discuss robots(.txt), humans(.txt), what they are and how they work as well as the impending Skynet invasion. Ok, maybe not that last part.

@@ -5,10 +5,23 @@
 
   {% assign url_fixed = site.url | replace:'index.html','' | absolute_url %}
 
+  <!-- Fix og:image to work in supposedly all situations. -->
+  {% if page.thumbnail %} <!-- There is a page-specific thumbnail (blog post) -->
+    {% if page.thumbnail contains "www." or page.thumbnail contains "http" %}
+      <!-- If it's an external image  -->
+      {% assign post_thumbnail = page.thumbnail %}
+    {% else %}
+      <!-- If it's an image hosted on this site -->
+      {% assign post_thumbnail = site.url | append: page.thumbnail %}
+    {% endif %}
+  {% else %} <!-- Use default. -->
+    {% assign post_thumbnail = site.url | append: "/assets/img/caticon.png" %}
+  {% endif %}
+
   <meta property="og:title" content="{{ page.title | default: site.title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:image" content="{{ page.thumbnail | default: "http://localhost:4000/assets/img/caticon.png" }}" />
+  <meta property="og:image" content="{{ post_thumbnail }}" />
   <meta property="og:description" name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <meta property="og:url" content="{{ url_fixed }}" />
 

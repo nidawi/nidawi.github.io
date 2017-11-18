@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This is a webpage dedicated to all things cat, coding, or both. Preferably both. Expect plenty of cat pictures.
   This is random filler content just to make this paragraph look a bit more appealing. Problem?
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "www.cats.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://nidawi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ---
 github_username:  nidawi
 disqus:

@@ -24,7 +24,7 @@ I have been programming since 2010 when I was first introduced to C# during my t
 I work with 3D as a hobby using mainly the application [3ds Max](https://www.autodesk.eu/products/3ds-max/overview). I create mostly "fan art" images and animations based on the game *World of Warcraft* using various assets taken from the actual game files. I do also, however, model, texture, and rig a fair bit myself and have created a few semi-complex character models with proper textures and rigging.
 
 #### Some examples of my work
-It should be noted that all of these examples are quite old and not accurate representations of where I am right now. Not that there's been much of a change but still.
+It should be noted that all of these examples are quite old and not accurate representations of where I am right now. Not that there's been much of a change but still. Click the images to enlarge.
 <script src="/assets/js/gallery.js" type="text/javascript" defer></script>
 <div class="gallery-wrapper">
 <img src="/assets/img/about/img1.png" alt="An example of my 3D work.">
