@@ -5,7 +5,7 @@ permalink: /about/
 ---
 # About me
 ### Who I am
-I am an absolute nobody. I go by the student name ja222ts or the alias Nidawi. I am a textbook nerd and enjoy all nerd-appropriate things such as coding, video games, computers in general, 3D design, and hitting the gym. I guess the last part doesn't really fit. I've never liked writing "about me" pages because there's quite literally nothing to know about me. I hope that I will one day become a developer of some description (preferably developing software that is helpful in some way) and I'd like to make a 3D game one day. That's about it, really.
+I am an absolute nobody. I generally go by the alias Nidawi, or Nid, even in real life. I am a textbook nerd and enjoy all nerd-appropriate things such as coding, video games, computers in general, 3D design, and hitting the gym. I guess the last part doesn't really fit. I've never liked writing "about me" pages because there's quite literally nothing to know about me. I hope that I will one day become a developer of some description (preferably developing software that is helpful in some way) and I'd like to make a 3D game one day. That's about it, really.
 #### Programming
 I have been programming since 2010 when I was first introduced to C# during my time in gymnasium (gymnasium is an acceptable word in English now!). I have since then developed a variety of applications including, but not limited to (all of those are written in C# [I assume that will change soon]):
 * Quality of life improvements

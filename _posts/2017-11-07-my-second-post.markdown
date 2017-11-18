@@ -7,7 +7,7 @@ poster: nidawi
 comments: true
 categories: personal
 ---
-In this, my second-ever post, I am going to focus on practising the liquid theme "language", or whatever you want to call it. To do this, I found the [shopify help center](https://help.shopify.com/themes/liquid) very useful. The blog is being designed similarly to [this site](https://www.webdesignerdepot.com/).
+In this, my second-ever post, I am going to focus on practising the liquid theme "language", or whatever you want to call it. To do this, I found the [shopify help center](https://help.shopify.com/themes/liquid) very useful. Additionally, the blog's design is inspired by [this site](https://www.webdesignerdepot.com/).
 {% assign testArray1 = "horse,cow,cat,elephant,dog" | split: "," %}
 
 #### Personal exercise 1

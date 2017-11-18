@@ -30,6 +30,9 @@
     position: fixed;
     height: auto;
 
+    &:hover {
+        cursor: pointer;
+    }
     img {
         width: 100%;
     }
